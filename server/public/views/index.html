@@ -4,11 +4,34 @@
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" href="/styles/style.css">
-	<script type="text/javascript" src="/vendors/jquery.min.js"></script>
-	<script type="text/javascript" src="/vendors/handlebars.min.js"></script>
+        <script type="text/javascript" src="/vendors/jquery.min.js"></script>
+        <script type="text/javascript" src="/vendors/handlebars.min.js"></script>
         <script type="text/javascript" src="/scripts/app.js"></script>
     </head>
     <body>
+    <main>
+            <h1>Students of Eta</h1>
+            <div class="carousel">
+                <script id="students" type="text/x-handlebars-template">
+                    <div class="prev">
+                        <img src="/styles/images/arrow_left.png">
+                        {{prev.firstName}} {{prev.lastName}}
+                    </div>
+                    <div class="current">  
+                        <h2>{{current.firstName}} {{current.lastName}}</h2>     
+                        <ul>
+                            {{#each current.favoriteMovies}}
+                                <li>{{this.movieName}}, {{this.releaseYear}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                    <div class="next">
+                        {{next.firstName}} {{next.lastName}}
+                        <img src="/styles/images/arrow_right.png">
+                    </div>
+                </script>
+           </div>
+    </main>
     </body>
 
 </html>
